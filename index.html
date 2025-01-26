@@ -121,13 +121,13 @@
             chatBox.scrollTop = chatBox.scrollHeight;
 
             try {
-                const response = await fetch("https://raz53jqxmida2rtvbtppv2svei0yrafw.lambda-url.eu-north-1.on.aws/", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ message: userInput })
-                });
+            const response = await fetch("https://raz53jqxmida2rtvbtppv2svei0yrafw.lambda-url.eu-north-1.on.aws/", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ message: userInput }),
+                mode: 'no-cors'
+            });
+                
 
                 // Tarkista HTTP-status
                 if (!response.ok) {
